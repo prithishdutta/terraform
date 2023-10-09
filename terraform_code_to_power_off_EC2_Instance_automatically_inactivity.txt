@@ -1,0 +1,11 @@
+module "turn_off_ec2" {
+  source = "../modules/..."
+  instance_id = "i-0298c78d123dhjkld"
+  evaluation_periods        = "1"
+  period                    = "600"
+  metric_name               = "ActiveSessions"
+  namespace                 = "TableauServer"
+  comparison_operator       = "LessThanOrEqualToThreshold"
+  threshold                 = "0"
+  statistic                 = "Average"
+}
